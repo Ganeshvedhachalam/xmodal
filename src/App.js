@@ -44,13 +44,15 @@ function App() {
   return (
    
       
-<div className="modal"  onClick={handleCloseModal}> 
+<div  className="App" onClick={handleCloseModal}> 
   <h1> User Details Modal</h1>
   <button onClick={handleopenform}>Open Form</button>
 
-<div className="modal-content">
 
-{modal&& <form onSubmit={handleModal} > 
+{modal&& 
+  <div className='modal'>
+  <div className="modal-content">
+<form onSubmit={handleModal} > 
   <h1>Fill Details</h1>
  
    
@@ -61,9 +63,12 @@ function App() {
    <label>Date of Birth:</label> <br/><input id='dob' name="dob" value={ input.dob} type="date"onChange={handlechange} required/><br/>
    <button className="submit-button" type="submit">Submit</button>
 </form>
+</div>
+</div>
 }
 
-</div>
+
+
 
 </div>
 
