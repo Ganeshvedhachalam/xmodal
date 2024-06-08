@@ -24,8 +24,8 @@ function App() {
   
   const handleModal=(e)=>{
     e.preventDefault();
-    if(input.phonenumber.length<10){
-      alert("invalid phone number")
+    if(input.phonenumber.length!==10){
+      alert("Invalid phone number. Please enter a 10-digit phone number.invalid phone number")
     }
    SetInput({
     username:"",
@@ -42,7 +42,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+   
       
 <div className="modal"  onClick={handleCloseModal}> 
   <h1> User Details Modal</h1>
@@ -56,7 +56,8 @@ function App() {
    
    <label >Username:</label> <br/><input  id='username' name="username" value={input.username} type="text" onChange={handlechange} required/><br/>
    <label>Email:</label> <br/><input id='email' name="email" value={input.email} type="email"  onChange={handlechange}required/><br/>
-   <label>Phone Number:</label> <br/><input id='phonenumber' name='phonenumber' value={input.phonenumber} type="tel" onChange={handlechange}></input><br/>
+   <label>Phone Number:</label> <br/><input id="phone" name='phonenumber' value={input.phonenumber}
+   pattern='/d{10}' type="tel" onChange={handlechange}></input><br/>
    <label>Date of Birth:</label> <br/><input id='dob' name="dob" value={ input.dob} type="date"onChange={handlechange} required/><br/>
    <button className="submit-button" type="submit">Submit</button>
 </form>
@@ -66,7 +67,7 @@ function App() {
 
 </div>
 
-    </div>
+   
   );
 }
 
